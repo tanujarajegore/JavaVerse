@@ -77,14 +77,14 @@ class TodoApp {
             System.out.println("4. Delete Task");
             System.out.println("5. Exit");
 
-            System.out.print("Enter choice: ");
+            System.out.print("===Enter choice=== ");
             choice = sc.nextInt();
             sc.nextLine();
 
             switch(choice) {
 
                 case 1:
-                    System.out.print("Enter Task: ");
+                    System.out.print("===Enter Task===");
                     String task = sc.nextLine();
                     app.addTask(task);
                     break;
@@ -94,23 +94,23 @@ class TodoApp {
                     break;
 
                 case 3:
-                    System.out.print("Enter task number: ");
+                    System.out.print("===Enter task number=== ");
                     int c = sc.nextInt();
                     app.completeTask(c-1);
                     break;
 
                 case 4:
-                    System.out.print("Enter task number: ");
+                    System.out.print("===Enter task number=== ");
                     int d = sc.nextInt();
                     app.deleteTask(d-1);
                     break;
 
                 case 5:
-                    System.out.println("Exit");
+                    System.out.println("===Exit===");
                     break;
 
                 default:
-                    System.out.println("Wrong choice");
+                    System.out.println("===Wrong choice===");
             }
 
         } while(choice != 5);
