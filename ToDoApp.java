@@ -20,14 +20,14 @@ class TodoApp {
 
     ArrayList<Task> tasks = new ArrayList<>();
 
-    // Add Task
+    
     public void addTask(String description) {
         Task task = new Task(description);
         tasks.add(task);
         System.out.println("Task Added Successfully");
     }
 
-    // View Tasks
+    
     public void viewTasks() {
         if(tasks.isEmpty()) {
             System.out.println("No tasks available");
@@ -40,7 +40,7 @@ class TodoApp {
         }
     }
 
-    // Complete Task
+    
     public void completeTask(int index) {
         if(index >= 0 && index < tasks.size()) {
             tasks.get(index).completed = true;
@@ -51,7 +51,7 @@ class TodoApp {
         }
     }
 
-    // Delete Task
+    
     public void deleteTask(int index) {
         if(index >= 0 && index < tasks.size()) {
             tasks.remove(index);
@@ -71,20 +71,21 @@ class TodoApp {
         int choice;
 
         do {
+            System.out.println("===== ToDoApp =====");
             System.out.println("\n1. Add Task");
             System.out.println("2. View Task");
             System.out.println("3. Complete Task");
             System.out.println("4. Delete Task");
             System.out.println("5. Exit");
 
-            System.out.print("===Enter choice=== ");
+            System.out.print("Enter choice: ");
             choice = sc.nextInt();
             sc.nextLine();
 
             switch(choice) {
 
                 case 1:
-                    System.out.print("===Enter Task===");
+                    System.out.print("Enter Task:");
                     String task = sc.nextLine();
                     app.addTask(task);
                     break;
@@ -94,23 +95,23 @@ class TodoApp {
                     break;
 
                 case 3:
-                    System.out.print("===Enter task number=== ");
+                    System.out.print("Enter task number: ");
                     int c = sc.nextInt();
                     app.completeTask(c-1);
                     break;
 
                 case 4:
-                    System.out.print("===Enter task number=== ");
+                    System.out.print("Enter task number: ");
                     int d = sc.nextInt();
                     app.deleteTask(d-1);
                     break;
 
                 case 5:
-                    System.out.println("===Exit===");
+                    System.out.println("Exit:");
                     break;
 
                 default:
-                    System.out.println("===Wrong choice===");
+                    System.out.println("Wrong choice:");
             }
 
         } while(choice != 5);
